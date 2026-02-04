@@ -121,16 +121,22 @@
       </div>
     </div>
 
+    <div class="section">
+      <h2>පංතිය පිළිබඳව</h2>
+      <p>මෙම Private Tuition Class එක තුළ සිසුන්ට පුද්ගලික අවධානයක් යටතේ සිංහල විෂය කරුණු පැහැදිලිව සහ ප්‍රායෝගිකව ඉගැන්වේ. පාසල් පාඩම්, homework, විභාග සූදානම් සහ දුර්වල කොටස් ශක්තිමත් කිරීම මෙහි ප්‍රධාන අරමුණු වේ.</p>
+    </div>
+
     <div class="section" id="subjects">
       <h2>පංති ගාස්තු සහ වේලාවන්</h2>
       <ul style="list-style-type: '✔️ '; padding-left: 20px;">
-        <li>Grade 6–7 : Rs. 1,000 / මසකට</li>
-        <li>Grade 8–9 : Rs. 1,500 / මසකට</li>
+        <li>Grade 6–7 : Rs. 8000 / මසකට</li>
+        <li>Grade 8–9 : Rs. 1,000 / මසකට</li>
         <li>🕒 පංති: සෙනසුරාදා සහ ඉරිදා</li>
       </ul>
       <div class="card-grid">
         <div class="card"><h3>ව්‍යාකරණ</h3><p>නාම පද, ක්‍රියා පද, සන්ධි</p></div>
         <div class="card"><h3>විභාග සූදානම</h3><p>පසුගිය ප්‍රශ්න පත්‍ර සාකච්ඡාව</p></div>
+        <div class="card"><h3>රචනා</h3><p>ලිපි සහ නිර්මාණාත්මක ලිවීම</p></div>
       </div>
     </div>
 
@@ -138,13 +144,13 @@
       <h2>සිසුන් ලියාපදිංචි වීම</h2>
       <form id="registrationForm">
         <label>සම්පූර්ණ නම:</label>
-        <input type="text" name="name" placeholder="ඔබේ නම මෙහි ලියන්න" required>
+        <input type="text" name="Name" placeholder="ඔබේ නම මෙහි ලියන්න" required>
         
         <label>ශ්‍රේණිය:</label>
-        <input type="text" name="grade" placeholder="ශ්‍රේණිය (උදා: 8)" required>
+        <input type="text" name="Grade" placeholder="ශ්‍රේණිය (උදා: 8)" required>
         
         <label>දුරකථන අංකය:</label>
-        <input type="tel" name="phone" placeholder="071 XXXXXXX" required>
+        <input type="tel" name="Phone" placeholder="071 XXXXXXX" required>
         
         <button class="btn" type="submit" id="submitBtn">ලියාපදිංචි වන්න</button>
       </form>
@@ -158,43 +164,4 @@
       </div>
     </div>
 
-    <div class="section" id="contact">
-      <h2>සම්බන්ධ වන්න</h2>
-      <p>📞 <strong>දුරකථන:</strong> 071 3605534</p>
-      <a class="btn" style="background-color: #25D366; text-decoration: none;" href="https://wa.me/94713605534" target="_blank">📲 WhatsApp පණිවිඩයක් එවන්න</a>
-    </div>
-  </div>
-
-  <footer>
-    <p>© 2026 සිංහල භාෂා පංතිය | Desham Wijethunga</p>
-  </footer>
-
-  <script>
-    // ඔබේ Apps Script URL එක මෙහි ඇත
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwSm4zcO9Z6mSivX0lQqmYBohKvy0AOSNT8NCWgdT_dIB4WKqM5Edgeif6KvCNpNuiW/exec';
-    const form = document.getElementById('registrationForm');
-    const successBox = document.getElementById('successBox');
-    const RegNumberDisplay = document.getElementById('RegNumberDisplay');
-    const submitBtn = document.getElementById('submitBtn');
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = "දත්ත ඇතුළත් කරමින්...";
-      
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => response.text())
-        .then(regNo => {
-            RegNumberDisplay.innerHTML = regNo;
-            successBox.style.display = "block";
-            form.style.display = "none";
-        })
-        .catch(error => {
-            alert('Error! ' + error.message);
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = "ලියාපදිංචි වන්න";
-        });
-    });
-  </script>
-</body>
-</html>
+    <div class="section" id
