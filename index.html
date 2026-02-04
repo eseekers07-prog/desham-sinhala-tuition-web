@@ -164,4 +164,43 @@
       </div>
     </div>
 
-    <div class="section" id
+    <div class="section" id="contact">
+      <h2>සම්බන්ධ වන්න</h2>
+      <p>📞 <strong>දුරකථන:</strong> 071 3605534</p>
+      <a class="btn" style="background-color: #25D366; text-decoration: none;" href="https://wa.me/94713605534" target="_blank">📲 WhatsApp පණිවිඩයක් එවන්න</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 සිංහල භාෂා පංතිය | Desham Wijethunga</p>
+  </footer>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwSm4zcO9Z6mSivX0lQqmYBohKvy0AOSNT8NCWgdT_dIB4WKqM5Edgeif6KvCNpNuiW/exec';
+    const form = document.getElementById('registrationForm');
+    const successBox = document.getElementById('successBox');
+    const RegNumberDisplay = document.getElementById('RegNumberDisplay');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "දත්ත ඇතුළත් කරමින්...";
+      
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => response.text())
+        .then(regNo => {
+            // මෙතන අකුරු හරියටම variable එකට සමාන විය යුතුයි
+            RegNumberDisplay.innerHTML = regNo;
+            successBox.style.display = "block";
+            form.style.display = "none";
+        })
+        .catch(error => {
+            alert('Error! ' + error.message);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "ලියාපදිංචි වන්න";
+        });
+    });
+  </script>
+</body>
+</html>
