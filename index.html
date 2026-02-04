@@ -14,19 +14,24 @@
       line-height: 1.6;
     }
     
+   header {
+    background-image: url('Untitled-1.png');
+    background-size: contain; /* පින්තූරය කැපෙන්නේ නැතිව සම්පූර්ණයෙන්ම පෙන්වයි */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    aspect-ratio: 1920 / 600; /* පින්තූරයේ නියම දිග/උස අනුපාතය මෙතැනට දෙන්න */
+    height: auto;
+    background-color: #3c096c; /* පින්තූරයේ පසුබිමට සමාන පාටක් මෙතැනට දෙන්න */
+}
+
+/* Mobile වලදී */
+@media (max-width: 768px) {
     header {
-      /* Banner එක සඳහා ඔබ සෑදූ පින්තූරය මෙහි සම්බන්ධ කර ඇත */
-      background: url('Untitled-1.png'); 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 450px; /* PC සඳහා Banner එකේ උස */
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+        aspect-ratio: auto;
+        height: 200px; /* Mobile වලදී උස අතින් ප්‍රමාණය මෙතැනින් වෙනස් කරන්න */
     }
+}
 
     nav {
       background-color: #3c096c;
