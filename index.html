@@ -14,12 +14,14 @@
       line-height: 1.6;
     }
     
+    /* Banner එක Crop නොවී ලොකුවට පෙනීමට සකස් කළා */
     header {
       background: url('Untitled-1.png'); 
-      background-size: cover;
+      background-size: contain; /* රූපය සම්පූර්ණයෙන්ම පෙනීමට */
       background-position: center;
       background-repeat: no-repeat;
-      height: 450px; 
+      background-color: #fff; /* රූපය දෙපස ඉතිරි වන ඉඩ සුදු පැහැයෙන් පෙන්වීමට */
+      height: 600px; /* උස වැඩි කළා */
       width: 100%;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
@@ -49,12 +51,10 @@
     }
     .section h2 { margin-top: 0; color: #5a189a; border-left: 5px solid #7b2cbf; padding-left: 15px; margin-bottom: 20px; }
     
-    /* ගුරුවරයාගේ කොටස */
     .teacher-box { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
     .teacher-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 6px solid #f3e5f5; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     .teacher-info p { margin: 8px 0; font-size: 1.1rem; }
 
-    /* Online පංති කොටස */
     .online-card {
       background-color: #f3e5f5;
       border-radius: 10px;
@@ -67,7 +67,6 @@
     .online-card span { font-size: 2.2rem; }
     .online-card div { font-size: 1rem; color: #333; }
 
-    /* PDF Download Grid */
     .download-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -85,7 +84,6 @@
     .download-card:hover { border-color: #7b2cbf; transform: translateY(-5px); }
     .download-card h3 { margin: 0 0 15px 0; font-size: 1.1rem; color: #3c096c; }
 
-    /* භෞතික පංති Grid */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -103,7 +101,6 @@
       justify-content: space-between;
     }
 
-    /* බොත්තම් */
     .btn {
       display: inline-block; padding: 12px 25px;
       background-color: #7b2cbf; color: white;
@@ -117,14 +114,17 @@
     .btn-zoom { background-color: #3b82f6; margin-top: 15px; }
     .btn-pdf { background-color: #e63946; font-size: 0.9rem; margin-top: 10px; }
 
-    /* ලියාපදිංචි පෝරමය */
     .reg-form-container { max-width: 600px; margin: 0 auto; padding: 25px; background: #fdfaff; border-radius: 15px; border: 1px solid #e0d0f0; }
     label { display: block; margin-bottom: 5px; font-weight: bold; color: #3c096c; }
     form input { width: 100%; padding: 14px; margin-bottom: 20px; border: 2px solid #ddd; border-radius: 10px; box-sizing: border-box; }
 
     footer { background-color: #240046; color: #eee; text-align: center; padding: 30px; margin-top: 50px; }
 
-    @media (max-width: 768px) { header { height: 220px; } .teacher-box { justify-content: center; text-align: center; } }
+    /* Mobile View එකේදී Banner එකේ පෙනුම */
+    @media (max-width: 768px) { 
+      header { height: 250px; background-size: contain; } 
+      .teacher-box { justify-content: center; text-align: center; } 
+    }
   </style>
 </head>
 <body>
@@ -145,7 +145,7 @@
     <div class="section" id="about">
       <h2>ගුරුවරයා පිළිබඳව</h2>
       <div class="teacher-box">
-        <img src="IMG_0651.JPG.jpg" alt="Desham Wijethunga" class="teacher-img">
+        <img src="IMG_6547.JPG.JPG" alt="Desham Wijethunga" class="teacher-img">
         <div class="teacher-info">
           <p>👩‍🏫 <strong>නම:</strong> Desham Wijethunga</p>
           <p>🎓 <strong>සුදුසුකම්:</strong> BA / Diploma in Sinhala</p>
@@ -222,15 +222,7 @@
           <h3>9 ශ්‍රේණිය</h3>
           <a href="#" class="btn btn-pdf">📥 Download PDF</a>
         </div>
-        <div class="download-card">
-          <h3>10 ශ්‍රේණිය</h3>
-          <a href="#" class="btn btn-pdf">📥 Download PDF</a>
         </div>
-        <div class="download-card">
-          <h3>11 ශ්‍රේණිය</h3>
-          <a href="#" class="btn btn-pdf">📥 Download PDF</a>
-        </div>
-      </div>
     </div>
 
     <div class="section" id="register">
@@ -240,7 +232,7 @@
           <label>සම්පූර්ණ නම:</label>
           <input type="text" name="name" placeholder="ඔබේ නම මෙහි ඇතුළත් කරන්න" required>
           <label>ශ්‍රේණිය:</label>
-          <input type="text" name="grade" placeholder="උදා: 10 ශ්‍රේණිය" required>
+          <input type="text" name="grade" placeholder="උදා: 7 ශ්‍රේණිය" required>
           <label>දුරකථන අංකය:</label>
           <input type="tel" name="phone" placeholder="071XXXXXXX" required>
           <button class="btn" type="submit" id="submitBtn">දත්ත ඇතුළත් කර ලියාපදිංචි වන්න</button>
