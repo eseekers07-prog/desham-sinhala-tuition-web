@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>සිංහල පංතිය</title>
+  <title>සිංහල පංතිය - Desham Wijethunga</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -14,24 +14,14 @@
       line-height: 1.6;
     }
     
-   header {
-    background-image: url('Untitled-1.png');
-    background-size: contain; /* පින්තූරය කැපෙන්නේ නැතිව සම්පූර්ණයෙන්ම පෙන්වයි */
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    aspect-ratio: 1920 / 600; /* පින්තූරයේ නියම දිග/උස අනුපාතය මෙතැනට දෙන්න */
-    height: auto;
-    background-color: #3c096c; /* පින්තූරයේ පසුබිමට සමාන පාටක් මෙතැනට දෙන්න */
-}
-
-/* Mobile වලදී */
-@media (max-width: 768px) {
     header {
-        aspect-ratio: auto;
-        height: 200px; /* Mobile වලදී උස අතින් ප්‍රමාණය මෙතැනින් වෙනස් කරන්න */
+      background: url('Untitled-1.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 450px;
+      width: 100%;
     }
-}
 
     nav {
       background-color: #3c096c;
@@ -54,143 +44,94 @@
       padding: 30px;
       margin-bottom: 30px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: 0.3s;
     }
     .section h2 { margin-top: 0; color: #5a189a; border-left: 5px solid #7b2cbf; padding-left: 15px; }
     
-    /* ගුරුවරයාගේ පින්තූරය මැදට ගැනීමට (Object Position භාවිතා කර ඇත) */
     .teacher-img {
-      width: 160px; 
-      height: 160px; 
-      border-radius: 50%; 
-      object-fit: cover; 
-      object-position: 20% center; /* පින්තූරයේ මුහුණ මැදට ගැනීමට */
-      border: 5px solid #7b2cbf; 
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 160px; height: 160px; border-radius: 50%; 
+      object-fit: cover; object-position: 20% center;
+      border: 5px solid #7b2cbf; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+    /* Form Styles */
+    form input {
+      width: 100%; padding: 12px; margin: 10px 0;
+      border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
     }
-    .card {
-      background: #f9f9ff;
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
-      border: 1px solid #eee;
-      transition: 0.3s;
-    }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
     .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background-color: #7b2cbf;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: 0.3s;
-      border: none;
-      cursor: pointer;
-      text-align: center;
+      display: inline-block; padding: 12px 25px;
+      background-color: #7b2cbf; color: white;
+      text-decoration: none; border-radius: 30px;
+      font-weight: bold; border: none; cursor: pointer;
+      width: 100%; font-size: 1rem;
     }
-    .btn:hover { background-color: #5a189a; transform: scale(1.05); }
+    .btn:hover { background-color: #5a189a; }
+    .btn:disabled { background-color: #ccc; cursor: not-allowed; }
 
-    footer {
-      background-color: #240046;
-      color: #eee;
-      text-align: center;
-      padding: 30px;
-      margin-top: 50px;
+    #successBox {
+      display:none; background: #e7fbd3; border: 1px solid #28a745;
+      padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center;
     }
+    #regNumDisplay { font-size: 2.5rem; font-weight: bold; color: #3c096c; margin: 10px 0; }
 
-    /* Mobile (දුරකථන) සඳහා වෙනස්කම් */
+    footer { background-color: #240046; color: #eee; text-align: center; padding: 30px; margin-top: 50px; }
+
     @media (max-width: 768px) {
-      header { height: 250px; } /* Mobile වලදී Banner එකේ උස අඩු කරයි */
-      nav { flex-wrap: wrap; gap: 10px; }
-      .section { padding: 20px; }
-      .teacher-img { margin-bottom: 15px; }
+      header { height: 250px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    </header>
+  <header></header>
 
   <nav>
     <a href="#about">පංතිය පිළිබඳව</a>
     <a href="#subjects">ගාස්තු</a>
-    <a href="#resources">සම්පත්</a>
+    <a href="#register">ලියාපදිංචිය</a>
     <a href="#contact">සම්බන්ධ වන්න</a>
   </nav>
 
   <div class="container">
-    <div class="section">
+    <div class="section" id="about">
       <h2>ගුරුවරයා පිළිබඳව</h2>
-      <div style="display: flex; align-items: center; gap: 25px; flex-wrap: wrap; margin-top: 20px;">
+      <div style="display: flex; align-items: center; gap: 25px; flex-wrap: wrap;">
         <img src="IMG_0651.JPG.jpg" alt="Desham Wijethunga" class="teacher-img">
         <div>
-          <p style="font-size: 1.1rem; margin: 0;">
-            👩‍🏫 <strong>නම:</strong> Desham Wijethunga<br />
-            🎓 <strong>අධ්‍යාපන සුදුසුකම්:</strong> BA / Diploma / Teaching Experience<br />
-            🏫 <strong>අත්දැකීම:</strong> වසර 5+ සිංහල ඉගැන්වීමේ පළපුරුද්ද<br />
-            ❤️ සිසුන්ට සරලව, ඉවසීමෙන් සහ පැහැදිලිව ඉගැන්වීම
-          </p>
+          <p>👩‍🏫 <strong>නම:</strong> Desham Wijethunga<br />🎓 වසර 5+ සිංහල ඉගැන්වීමේ පළපුරුද්ද</p>
         </div>
       </div>
     </div>
 
-    <div class="section" id="about">
-      <h2>පංතිය පිළිබඳව</h2>
-      <p>මෙම Private Tuition Class එක තුළ සිසුන්ට පුද්ගලික අවධානයක් යටතේ සිංහල විෂය කරුණු පැහැදිලිව සහ ප්‍රායෝගිකව ඉගැන්වේ. පාසල් පාඩම්, homework, විභාග සූදානම් සහ දුර්වල කොටස් ශක්තිමත් කිරීම මෙහි ප්‍රධාන අරමුණු වේ.</p>
-    </div>
-
-    <div class="section" id="subjects">
-      <h2>පංති ගාස්තු සහ වේලාවන්</h2>
-      <ul style="list-style-type: '✔️ '; padding-left: 20px;">
-        <li>Grade 6–7 : Rs. 8000 / මසකට</li>
-        <li>Grade 8–9 : Rs. 1,000 / මසකට</li>
-        <li>🕒 පංති: සෙනසුරාදා සහ ඉරිදා</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>ආවරණය කරන විෂය කරුණු</h2>
-      <div class="card-grid">
-        <div class="card"><h3>ව්‍යාකරණ</h3><p>නාම පද, ක්‍රියා පද, විභක්ති, සන්ධි</p></div>
-        <div class="card"><h3>රචනා</h3><p>නිබන්ධන, ලිපි, කතාන්දර ලිවීම</p></div>
-        <div class="card"><h3>කවි සහ ගද්‍ය</h3><p>කවි විස්තර, ගද්‍ය පාඩම්</p></div>
-        <div class="card"><h3>විභාග සූදානම</h3><p>පසුගිය ප්‍රශ්න පත්‍ර හා මාර්ගෝපදේශ</p></div>
-      </div>
-    </div>
-
-    <div class="section">
+    <div class="section" id="register">
       <h2>සිසුන් ලියාපදිංචි වීම</h2>
-      <form>
-        <label>නම:</label><input type="text" placeholder="ඔබගේ නම" style="width:100%;padding:12px;margin:10px 0;border:1px solid #ddd;border-radius:8px;" />
-        <label>ශ්‍රේණිය:</label><input type="text" placeholder="Grade" style="width:100%;padding:12px;margin:10px 0;border:1px solid #ddd;border-radius:8px;" />
-        <label>දුරකථන අංකය:</label><input type="tel" placeholder="071 3605534" style="width:100%;padding:12px;margin:10px 0;border:1px solid #ddd;border-radius:8px;" />
-        <button class="btn" type="submit" style="width: 100%;">ලියාපදිංචි වන්න</button>
+      <form id="registrationForm">
+        <label>සම්පූර්ණ නම:</label>
+        <input type="text" name="name" placeholder="ඔබේ නම මෙහි ලියන්න" required>
+        
+        <label>ශ්‍රේණිය:</label>
+        <input type="text" name="grade" placeholder="ශ්‍රේණිය (උදා: 8)" required>
+        
+        <label>දුරකථන අංකය:</label>
+        <input type="tel" name="phone" placeholder="071 XXXXXXX" required>
+        
+        <button class="btn" type="submit" id="submitBtn">ලියාපදිංචි වන්න</button>
       </form>
-    </div>
 
-    <div class="section" id="resources">
-      <h2>අධ්‍යාපන සම්පත්</h2>
-      <p>අමතර දැනුම සඳහා අප ලබාදෙන දෑ:</p>
-      <ul><li>PDF නෝට්ස්</li><li>වීඩියෝ පාඩම්</li><li>මාසික අභ්‍යාස පත්‍ර</li></ul>
-      <a href="#" class="btn">නෝට්ස් බාගන්න</a>
+      <div id="successBox">
+        <h3 style="color: #28a745; margin: 0;">✅ ලියාපදිංචිය සාර්ථකයි!</h3>
+        <p>ඔබේ ලියාපදිංචි අංකය:</p>
+        <div id="regNumDisplay"></div>
+        <p style="font-size: 0.9rem; color: #666;">මෙම අංකය සටහන් කරගන්න. අපි ඔබව ඉක්මනින් සම්බන්ධ කරගන්නෙමු.</p>
+        <button class="btn" onclick="location.reload()" style="background:#3c096c; margin-top:10px;">තවත් ලියාපදිංචියක් සිදුකරන්න</button>
+      </div>
     </div>
 
     <div class="section" id="contact">
       <h2>සම්බන්ධ වන්න</h2>
-      <p>📞 <strong>දුරකථන:</strong> 071 3605534<br />📧 <strong>ඊමේල්:</strong> sinhala.tuition@email.com</p>
-      <a class="btn" style="background-color: #25D366;" href="https://wa.me/94713605534" target="_blank">📲 WhatsApp Message</a>
+      <p>📞 <strong>දුරකථන:</strong> 071 3605534</p>
+      <a class="btn" style="background-color: #25D366; text-align: center; text-decoration: none;" href="https://wa.me/94713605534" target="_blank">📲 WhatsApp පණිවිඩයක් එවන්න</a>
     </div>
   </div>
 
@@ -198,5 +139,31 @@
     <p>© 2026 සිංහල භාෂා පංතිය | Desham Wijethunga</p>
   </footer>
 
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwSm4zcO9Z6mSivX0lQqmYBohKvy0AOSNT8NCWgdT_dIB4WKqM5Edgeif6KvCNpNuiW/exec';
+    const form = document.getElementById('registrationForm');
+    const successBox = document.getElementById('successBox');
+    const regNumDisplay = document.getElementById('regNumDisplay');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "දත්ත ඇතුළත් කරමින්...";
+      
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => response.text())
+        .then(regNo => {
+            regNumDisplay.innerHTML = regNo;
+            successBox.style.display = "block";
+            form.style.display = "none";
+        })
+        .catch(error => {
+            alert('Error! ' + error.message);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "ලියාපදිංචි වන්න";
+        });
+    });
+  </script>
 </body>
 </html>
