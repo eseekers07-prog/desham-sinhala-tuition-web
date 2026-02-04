@@ -6,80 +6,20 @@
   <title>සිංහල පංතිය - Desham Wijethunga</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans Sinhala', Arial, sans-serif;
-      background-color: #f5f7fb;
-      color: #222;
-      line-height: 1.6;
-    }
-    
-    header {
-      background: url('Untitled-1.png'); 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 450px;
-      width: 100%;
-    }
-
-    nav {
-      background-color: #3c096c;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+    body { margin: 0; font-family: 'Noto Sans Sinhala', Arial, sans-serif; background-color: #f5f7fb; color: #222; line-height: 1.6; }
+    header { background: url('Untitled-1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 450px; width: 100%; }
+    nav { background-color: #3c096c; display: flex; justify-content: center; gap: 20px; padding: 15px; position: sticky; top: 0; z-index: 1000; }
     nav a { color: #fff; text-decoration: none; font-weight: bold; font-size: 0.95rem; }
-    nav a:hover { color: #d69dfc; }
-
     .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-    
-    .section {
-      background: #fff;
-      border-radius: 15px;
-      padding: 30px;
-      margin-bottom: 30px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
+    .section { background: #fff; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
     .section h2 { margin-top: 0; color: #5a189a; border-left: 5px solid #7b2cbf; padding-left: 15px; }
-    
-    .teacher-img {
-      width: 160px; height: 160px; border-radius: 50%; 
-      object-fit: cover; object-position: 20% center;
-      border: 5px solid #7b2cbf; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    /* Form Styles */
-    form input {
-      width: 100%; padding: 12px; margin: 10px 0;
-      border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
-    }
-
-    .btn {
-      display: inline-block; padding: 12px 25px;
-      background-color: #7b2cbf; color: white;
-      text-decoration: none; border-radius: 30px;
-      font-weight: bold; border: none; cursor: pointer;
-      width: 100%; font-size: 1rem;
-    }
-    .btn:hover { background-color: #5a189a; }
-    .btn:disabled { background-color: #ccc; cursor: not-allowed; }
-
-    #successBox {
-      display:none; background: #e7fbd3; border: 1px solid #28a745;
-      padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center;
-    }
-    #regNumDisplay { font-size: 2.5rem; font-weight: bold; color: #3c096c; margin: 10px 0; }
-
+    .teacher-img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 5px solid #7b2cbf; }
+    form input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+    .btn { display: inline-block; padding: 12px 25px; background-color: #7b2cbf; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; border: none; cursor: pointer; width: 100%; }
+    #successBox { display:none; background: #e7fbd3; border: 1px solid #28a745; padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center; }
+    #RegNumberDisplay { font-size: 2.5rem; font-weight: bold; color: #3c096c; margin: 10px 0; }
     footer { background-color: #240046; color: #eee; text-align: center; padding: 30px; margin-top: 50px; }
-
-    @media (max-width: 768px) {
-      header { height: 250px; }
-    }
+    @media (max-width: 768px) { header { height: 250px; } }
   </style>
 </head>
 <body>
@@ -88,7 +28,6 @@
 
   <nav>
     <a href="#about">පංතිය පිළිබඳව</a>
-    <a href="#subjects">ගාස්තු</a>
     <a href="#register">ලියාපදිංචිය</a>
     <a href="#contact">සම්බන්ධ වන්න</a>
   </nav>
@@ -122,7 +61,7 @@
       <div id="successBox">
         <h3 style="color: #28a745; margin: 0;">✅ ලියාපදිංචිය සාර්ථකයි!</h3>
         <p>ඔබේ ලියාපදිංචි අංකය:</p>
-        <div id="regNumDisplay"></div>
+        <div id="RegNumberDisplay"></div>
         <p style="font-size: 0.9rem; color: #666;">මෙම අංකය සටහන් කරගන්න. අපි ඔබව ඉක්මනින් සම්බන්ධ කරගන්නෙමු.</p>
         <button class="btn" onclick="location.reload()" style="background:#3c096c; margin-top:10px;">තවත් ලියාපදිංචියක් සිදුකරන්න</button>
       </div>
@@ -143,7 +82,7 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwSm4zcO9Z6mSivX0lQqmYBohKvy0AOSNT8NCWgdT_dIB4WKqM5Edgeif6KvCNpNuiW/exec';
     const form = document.getElementById('registrationForm');
     const successBox = document.getElementById('successBox');
-    const regNumDisplay = document.getElementById('regNumDisplay');
+    const RegNumberDisplay = document.getElementById('RegNumberDisplay');
     const submitBtn = document.getElementById('submitBtn');
 
     form.addEventListener('submit', e => {
@@ -154,7 +93,8 @@
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => response.text())
         .then(regNo => {
-            regNumDisplay.innerHTML = regNo;
+            // මෙතන අකුරු හරියටම ගැලපිය යුතුයි (RegNumberDisplay)
+            RegNumberDisplay.innerHTML = regNo;
             successBox.style.display = "block";
             form.style.display = "none";
         })
