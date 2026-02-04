@@ -6,20 +6,92 @@
   <title>සිංහල පංතිය - Desham Wijethunga</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: 'Noto Sans Sinhala', Arial, sans-serif; background-color: #f5f7fb; color: #222; line-height: 1.6; }
-    header { background: url('Untitled-1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 450px; width: 100%; }
-    nav { background-color: #3c096c; display: flex; justify-content: center; gap: 20px; padding: 15px; position: sticky; top: 0; z-index: 1000; }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans Sinhala', Arial, sans-serif;
+      background-color: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+    
+    header {
+      background: url('Untitled-1.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 450px;
+      width: 100%;
+    }
+
+    nav {
+      background-color: #3c096c;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
     nav a { color: #fff; text-decoration: none; font-weight: bold; font-size: 0.95rem; }
+    nav a:hover { color: #d69dfc; }
+
     .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-    .section { background: #fff; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    
+    .section {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
     .section h2 { margin-top: 0; color: #5a189a; border-left: 5px solid #7b2cbf; padding-left: 15px; }
-    .teacher-img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 5px solid #7b2cbf; }
-    form input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
-    .btn { display: inline-block; padding: 12px 25px; background-color: #7b2cbf; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; border: none; cursor: pointer; width: 100%; }
-    #successBox { display:none; background: #e7fbd3; border: 1px solid #28a745; padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center; }
+    
+    .teacher-img {
+      width: 160px; height: 160px; border-radius: 50%; 
+      object-fit: cover; object-position: 20% center;
+      border: 5px solid #7b2cbf; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #f9f9ff;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      border: 1px solid #eee;
+    }
+
+    form input {
+      width: 100%; padding: 12px; margin: 10px 0;
+      border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
+    }
+
+    .btn {
+      display: inline-block; padding: 12px 25px;
+      background-color: #7b2cbf; color: white;
+      text-decoration: none; border-radius: 30px;
+      font-weight: bold; border: none; cursor: pointer;
+      width: 100%; font-size: 1rem; text-align: center;
+    }
+    .btn:hover { background-color: #5a189a; }
+
+    #successBox {
+      display:none; background: #e7fbd3; border: 1px solid #28a745;
+      padding: 20px; border-radius: 10px; margin-top: 20px; text-align: center;
+    }
     #RegNumberDisplay { font-size: 2.5rem; font-weight: bold; color: #3c096c; margin: 10px 0; }
+
     footer { background-color: #240046; color: #eee; text-align: center; padding: 30px; margin-top: 50px; }
-    @media (max-width: 768px) { header { height: 250px; } }
+
+    @media (max-width: 768px) {
+      header { height: 250px; }
+    }
   </style>
 </head>
 <body>
@@ -28,6 +100,7 @@
 
   <nav>
     <a href="#about">පංතිය පිළිබඳව</a>
+    <a href="#subjects">ගාස්තු</a>
     <a href="#register">ලියාපදිංචිය</a>
     <a href="#contact">සම්බන්ධ වන්න</a>
   </nav>
@@ -35,11 +108,29 @@
   <div class="container">
     <div class="section" id="about">
       <h2>ගුරුවරයා පිළිබඳව</h2>
-      <div style="display: flex; align-items: center; gap: 25px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 25px; flex-wrap: wrap; margin-top: 20px;">
         <img src="IMG_0651.JPG.jpg" alt="Desham Wijethunga" class="teacher-img">
         <div>
-          <p>👩‍🏫 <strong>නම:</strong> Desham Wijethunga<br />🎓 වසර 5+ සිංහල ඉගැන්වීමේ පළපුරුද්ද</p>
+          <p style="font-size: 1.1rem; margin: 0;">
+            👩‍🏫 <strong>නම:</strong> Desham Wijethunga<br />
+            🎓 <strong>අධ්‍යාපන සුදුසුකම්:</strong> BA / Diploma / Teaching Experience<br />
+            🏫 <strong>අත්දැකීම:</strong> වසර 5+ සිංහල ඉගැන්වීමේ පළපුරුද්ද<br />
+            ❤️ සිසුන්ට සරලව සහ පැහැදිලිව ඉගැන්වීම
+          </p>
         </div>
+      </div>
+    </div>
+
+    <div class="section" id="subjects">
+      <h2>පංති ගාස්තු සහ වේලාවන්</h2>
+      <ul style="list-style-type: '✔️ '; padding-left: 20px;">
+        <li>Grade 6–7 : Rs. 1,000 / මසකට</li>
+        <li>Grade 8–9 : Rs. 1,500 / මසකට</li>
+        <li>🕒 පංති: සෙනසුරාදා සහ ඉරිදා</li>
+      </ul>
+      <div class="card-grid">
+        <div class="card"><h3>ව්‍යාකරණ</h3><p>නාම පද, ක්‍රියා පද, සන්ධි</p></div>
+        <div class="card"><h3>විභාග සූදානම</h3><p>පසුගිය ප්‍රශ්න පත්‍ර සාකච්ඡාව</p></div>
       </div>
     </div>
 
@@ -70,7 +161,7 @@
     <div class="section" id="contact">
       <h2>සම්බන්ධ වන්න</h2>
       <p>📞 <strong>දුරකථන:</strong> 071 3605534</p>
-      <a class="btn" style="background-color: #25D366; text-align: center; text-decoration: none;" href="https://wa.me/94713605534" target="_blank">📲 WhatsApp පණිවිඩයක් එවන්න</a>
+      <a class="btn" style="background-color: #25D366; text-decoration: none;" href="https://wa.me/94713605534" target="_blank">📲 WhatsApp පණිවිඩයක් එවන්න</a>
     </div>
   </div>
 
@@ -79,6 +170,7 @@
   </footer>
 
   <script>
+    // ඔබේ Apps Script URL එක මෙහි ඇත
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwSm4zcO9Z6mSivX0lQqmYBohKvy0AOSNT8NCWgdT_dIB4WKqM5Edgeif6KvCNpNuiW/exec';
     const form = document.getElementById('registrationForm');
     const successBox = document.getElementById('successBox');
@@ -93,7 +185,6 @@
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => response.text())
         .then(regNo => {
-            // මෙතන අකුරු හරියටම ගැලපිය යුතුයි (RegNumberDisplay)
             RegNumberDisplay.innerHTML = regNo;
             successBox.style.display = "block";
             form.style.display = "none";
