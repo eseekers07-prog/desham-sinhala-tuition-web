@@ -1,141 +1,65 @@
-
 <!DOCTYPE html>
 <html lang="si">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>සිංහල පංතිය - Desham Wijethunga</title>
-  <title>සිංහල පංතිය | Desham Wijethunga - 6 සිට 11 ශ්‍රේණි දක්වා</title>
-  <meta name="description" content="ඩෙෂාම් විජේතුංග මෙහෙයවන 6 සිට 11 ශ්‍රේණි සඳහා වන මාර්ගගත (Online) සහ භෞතික සිංහල භාෂාව සහ සාහිත්‍ය පංති. අදම ලියාපදිංචි වන්න.">
+  <title>සිංහල පංතිය | Desham Wijethunga - 6 සිට 9 ශ්‍රේණි දක්වා</title>
+  <meta name="description" content="ඩෙෂාම් විජේතුංග මෙහෙයවන 6 සිට 9 ශ්‍රේණි සඳහා වන මාර්ගගත (Online) සහ භෞතික සිංහල භාෂාව සහ සාහිත්‍ය පංති.">
   <meta name="keywords" content="Sinhala Class, Desham Wijethunga, සිංහල පංතිය, Online Sinhala, Matara Sinhala Class, Best Sinhala Teacher">
   <meta name="author" content="Desham Wijethunga">
 
-  <meta property="og:title" content="සිංහල පංතිය - Desham Wijethunga">
-  <meta property="og:description" content="නිවසේ සිටම සිංහල විෂය ඉතා සරලව ඉගෙන ගන්න.">
-  <meta property="og:image" content="Untitled-1.png">
-  <meta property="og:url" content="https://ඔබේ-වෙබ්-අඩවියේ-ලින්ක්-එක.com">
-
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Noto Sans Sinhala', Arial, sans-serif;
-      background-color: #f5f7fb;
-      color: #222;
-      line-height: 1.6;
-    }
-    
-    /* Banner එක Crop නොවී ලොකුවට පෙනීමට සකස් කළා */
-    header {
-      background: url('Untitled-1.png'); 
-      background-size: contain; /* රූපය සම්පූර්ණයෙන්ම පෙනීමට */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: #3c096c; /* මෙතැනට තද දම් පැහැය එකතු කළා */
-      height: 600px; /* උස වැඩි කළා */
-      width: 100%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    nav {
-      background-color: #3c096c;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      flex-wrap: wrap;
-    }
+    body { margin: 0; font-family: 'Noto Sans Sinhala', Arial, sans-serif; background-color: #f5f7fb; color: #222; line-height: 1.6; scroll-behavior: smooth; }
+    header { background: url('Untitled-1.png'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #3c096c; height: 600px; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    nav { background-color: #3c096c; display: flex; justify-content: center; gap: 15px; padding: 15px; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
     nav a { color: #fff; text-decoration: none; font-weight: bold; transition: 0.3s; padding: 5px 10px; border-radius: 5px; }
     nav a:hover { background-color: rgba(255,255,255,0.1); color: #d69dfc; transform: scale(1.05); }
 
     .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-    
-    .section {
-      background: #fff;
-      border-radius: 15px;
-      padding: 30px;
-      margin-bottom: 30px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
+    .section { background: #fff; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
     .section h2 { margin-top: 0; color: #5a189a; border-left: 5px solid #7b2cbf; padding-left: 15px; margin-bottom: 20px; }
     
+    /* Countdown Styling */
+    .countdown-container { background: linear-gradient(135deg, #7b2cbf, #3c096c); color: white; text-align: center; padding: 25px; border-radius: 15px; margin-bottom: 30px; }
+    .timer { display: flex; justify-content: center; gap: 20px; font-size: 1.5rem; font-weight: bold; margin-top: 10px; }
+    .timer div { background: rgba(255,255,255,0.2); padding: 10px; border-radius: 10px; min-width: 80px; }
+
+    /* Notice Board */
+    .notice-board { border: 2px dashed #ff9100; background: #fff9f0; padding: 20px; border-radius: 15px; margin-bottom: 30px; }
+    .notice-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: bold; color: #e65100; }
+
     .teacher-box { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
     .teacher-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 6px solid #f3e5f5; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    .teacher-info p { margin: 8px 0; font-size: 1.1rem; }
-
-    .online-card {
-      background-color: #f3e5f5;
-      border-radius: 10px;
-      padding: 15px 20px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+    
+    .online-card { background-color: #f3e5f5; border-radius: 10px; padding: 15px 20px; margin-bottom: 15px; display: flex; align-items: center; gap: 20px; }
     .online-card span { font-size: 2.2rem; }
-    .online-card div { font-size: 1rem; color: #333; }
 
-    .download-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .download-card {
-      background: #fdfaff;
-      border: 1px solid #e0d0f0;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      transition: 0.3s;
-    }
-    .download-card:hover { border-color: #7b2cbf; transform: translateY(-5px); }
-    .download-card h3 { margin: 0 0 15px 0; font-size: 1.1rem; color: #3c096c; }
+    .timetable-container { overflow-x: auto; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+    th { background-color: #7b2cbf; color: white; }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .card {
-      background: #f9f9ff;
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
-      border: 1px solid #eee;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+    .card { background: #f9f9ff; border-radius: 12px; padding: 25px; text-align: center; border: 1px solid #eee; display: flex; flex-direction: column; justify-content: space-between; }
 
-    .btn {
-      display: inline-block; padding: 12px 25px;
-      background-color: #7b2cbf; color: white;
-      text-decoration: none; border-radius: 35px;
-      font-weight: bold; border: none; cursor: pointer;
-      width: 100%; font-size: 1.1rem; text-align: center;
-      transition: 0.3s ease;
-      box-sizing: border-box;
-    }
+    .btn { display: inline-block; padding: 12px 25px; background-color: #7b2cbf; color: white; text-decoration: none; border-radius: 35px; font-weight: bold; border: none; cursor: pointer; width: 100%; font-size: 1.1rem; text-align: center; transition: 0.3s ease; box-sizing: border-box; }
     .btn:hover { transform: scale(1.02); opacity: 0.9; }
     .btn-zoom { background-color: #3b82f6; margin-top: 15px; }
-    .btn-pdf { background-color: #e63946; font-size: 0.9rem; margin-top: 10px; }
+
+    .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+    .download-card { background: #fdfaff; border: 1px solid #e0d0f0; padding: 20px; border-radius: 12px; text-align: center; transition: 0.3s; }
+    .download-card:hover { border-color: #7b2cbf; transform: translateY(-5px); }
 
     .reg-form-container { max-width: 600px; margin: 0 auto; padding: 25px; background: #fdfaff; border-radius: 15px; border: 1px solid #e0d0f0; }
-    label { display: block; margin-bottom: 5px; font-weight: bold; color: #3c096c; }
     form input { width: 100%; padding: 14px; margin-bottom: 20px; border: 2px solid #ddd; border-radius: 10px; box-sizing: border-box; }
 
+    .float-wa { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; font-size: 24px; transition: 0.3s; }
+    .float-wa:hover { transform: scale(1.1); }
+    
     footer { background-color: #240046; color: #eee; text-align: center; padding: 30px; margin-top: 50px; }
 
-    /* Mobile View එකේදී Banner එකේ පෙනුම */
-    @media (max-width: 768px) { 
-      header { height: 250px; background-size: contain; } 
-      .teacher-box { justify-content: center; text-align: center; } 
-    }
+    @media (max-width: 768px) { header { height: 250px; } .teacher-box { justify-content: center; text-align: center; } }
   </style>
 </head>
 <body>
@@ -144,6 +68,7 @@
 
   <nav>
     <a href="#about">ගුරුවරයා</a>
+    <a href="#timetable">කාලසටහන</a>
     <a href="#physical">භෞතික පංති</a>
     <a href="#online">Online පංති</a>
     <a href="#resources">PDF නිබන්ධන</a>
@@ -152,7 +77,22 @@
   </nav>
 
   <div class="container">
-    
+
+    <div class="countdown-container">
+      <h3 style="margin:0;">පළමු වාර විභාගයට තව...</h3>
+      <div class="timer" id="timer">
+        <div><span id="days">00</span><br><small>දින</small></div>
+        <div><span id="hours">00</span><br><small>පැය</small></div>
+        <div><span id="minutes">00</span><br><small>මිනිත්තු</small></div>
+      </div>
+    </div>
+
+    <div class="section notice-board">
+      <h2 style="color: #e65100; border-left-color: #ff9100;">📢 පංති නිවේදන</h2>
+      <div class="notice-item">⭐ 2026 නව වසර සඳහා සිසුන් බඳවා ගැනීම දැන් සිදු කෙරේ.</div>
+      <div class="notice-item">⭐ එළඹෙන සෙනසුරාදා සියලුම පංති නියමිත පරිදි Zoom ඔස්සේ පැවැත්වේ.</div>
+    </div>
+
     <div class="section" id="about">
       <h2>ගුරුවරයා පිළිබඳව</h2>
       <div class="teacher-box">
@@ -169,88 +109,80 @@
       </div>
     </div>
 
+    <div class="section">
+      <h2>අපේ පංතියේ විශේෂත්වය</h2>
+      <div class="card-grid">
+        <div class="card"><h3>📝 ප්‍රශ්න පත්‍ර සාකච්ඡාව</h3><p>සෑම ඒකකයක් අවසානයේදීම වාර විභාග මට්ටමේ ප්‍රශ්න පත්‍ර සාකච්ඡා කෙරේ.</p></div>
+        <div class="card"><h3>🎨 ආකර්ෂණීය නිබන්ධන</h3><p>මනෝවිද්‍යාත්මක ක්‍රමවේද අනුව සැකසූ වර්ණවත් නිබන්ධන නිවසටම.</p></div>
+        <div class="card"><h3>🏆 විශිෂ්ට ප්‍රතිඵල</h3><p>සිංහල විෂයට "A" සාමාර්ථයක් සහතික කරන සරල ඉගැන්වීම් රටාව.</p></div>
+      </div>
+    </div>
+
+    <div class="section" id="timetable">
+      <h2>පංති කාලසටහන (Timetable)</h2>
+      <div class="timetable-container">
+        <table>
+          <thead>
+            <tr><th>ශ්‍රේණිය</th><th>දිනය</th><th>වේලාව</th><th>පංති වර්ගය</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>6 ශ්‍රේණිය</td><td>සෙනසුරාදා</td><td>පූ.ව. 8.00 - 10.00</td><td>Online (Zoom)</td></tr>
+            <tr><td>7 ශ්‍රේණිය</td><td>සෙනසුරාදා</td><td>පූ.ව. 10.30 - 12.30</td><td>Online (Zoom)</td></tr>
+            <tr><td>8 ශ්‍රේණිය</td><td>සෙනසුරාදා</td><td>ප.ව. 1.00 - 3.00</td><td>Online (Zoom)</td></tr>
+            <tr><td>9 ශ්‍රේණිය</td><td>සෙනසුරාදා</td><td>ප.ව. 3.30 - 5.30</td><td>Online (Zoom)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <div class="section" id="physical">
       <h2>භෞතික පංති (Physical Classes)</h2>
       <div class="card-grid">
-        <div class="card">
-          <h3>කිරුල - මාතර</h3>
-          <p>📍 මාතර නගරය</p>
-          <a href="https://maps.app.goo.gl/sC9FxGZ7SHcvHC5U7" target="_blank" class="btn" style="background:none; border: 2px solid #7b2cbf; color: #7b2cbf; margin-top: 10px;">📍 View Map</a>
-        </div>
-        <div class="card">
-          <h3>සිප්සෝන් - මාවරල</h3>
-          <p>📍 මාවරල හන්දිය</p>
-          <a href="https://maps.app.goo.gl/v7gssj1WrUJCgJBGA" target="_blank" class="btn" style="background:none; border: 2px solid #7b2cbf; color: #7b2cbf; margin-top: 10px;">📍 View Map</a>
-        </div>
-        <div class="card">
-          <h3>සිප්සෙවන - කුඩාපාන</h3>
-          <p>📍 කුඩාපාන</p>
-          <a href="https://maps.app.goo.gl/vaiisAqEHkyksGix5" target="_blank" class="btn" style="background:none; border: 2px solid #7b2cbf; color: #7b2cbf; margin-top: 10px;">📍 View Map</a>
-        </div>
+        <div class="card"><h3>කිරුල - මාතර</h3><p>📍 මාතර නගරය</p><a href="https://maps.app.goo.gl/sC9FxGZ7SHcvHC5U7" target="_blank" class="btn" style="background:none; border: 2px solid #7b2cbf; color: #7b2cbf; margin-top: 10px;">📍 View Map</a></div>
+        <div class="card"><h3>සිප්සෝන් - මාවරල</h3><p>📍 මාවරල හන්දිය</p><a href="https://maps.app.goo.gl/v7gssj1WrUJCgJBGA" target="_blank" class="btn" style="background:none; border: 2px solid #7b2cbf; color: #7b2cbf; margin-top: 10px;">📍 View Map</a></div>
+        <div class="card"><h3>සිප්සෙවන - කුඩාපාන</h3><p>📍 කුඩාපාන</p><a href="https://maps.app.goo.gl/vaiisAqEHkyksGix5" target="_blank" class="btn" style="background:none; border: 2px solid #7b2cbf; color: #7b2cbf; margin-top: 10px;">📍 View Map</a></div>
       </div>
     </div>
 
     <div class="section" id="online">
-      <h2 style="color:#5a189a;">Online පංති (Zoom Classes)</h2>
-      <p style="margin-bottom: 25px;">දිවයිනේ ඕනෑම ප්‍රදේශයක සිටින දරුවන්ට නිවසේ සිටම සම්බන්ධ විය හැක.</p>
-      
-      <div class="online-card">
-        <span>💻</span>
-        <div><strong>සජීවී Zoom පංති:</strong> නවීන තාක්ෂණය භාවිතා කරමින් ඉතාමත් පැහැදිලිව ඉගැන්වීම් සිදු කෙරේ.</div>
-      </div>
+      <h2>Online පංති (Zoom Classes)</h2>
+      <div class="online-card"><span>💻</span><div><strong>සජීවී Zoom පංති:</strong> නවීන තාක්ෂණයෙන් යුත් ඉගැන්වීම්.</div></div>
+      <div class="online-card"><span>🏠</span><div><strong>නිබන්ධන නිවසටම:</strong> තැපැල් හෝ කුරියර් මගින් නිබන්ධන එවනු ලැබේ.</div></div>
+      <div class="online-card"><span>🎬</span><div><strong>Recordings:</strong> මගහැරුණු පංති සඳහා Recordings ලබාදේ.</div></div>
+      <a href="https://wa.me/94713605534" class="btn btn-zoom">🚀 Online පංතියට ලියාපදිංචි වන්න</a>
+    </div>
 
-      <div class="online-card">
-        <span>🏠</span>
-        <div><strong>නිබන්ධන නිවසටම:</strong> පංතියට අදාළ නිබන්ධන තැපැල් මගින් හෝ කුරියර් සේවාව මගින් ඔබේ නිවසටම එවනු ලැබේ.</div>
+    <div class="section">
+      <h2>සිසුන් සහ දෙමාපියන්ගේ අදහස්</h2>
+      <div class="card-grid">
+        <div class="card" style="font-style: italic;"><p>"සිංහල විෂය මෙතරම් සරලව ඉගෙන ගන්න පුළුවන් කියලා හිතුවේ නැහැ. ස්තූතියි සර්!"</p><strong>- සඳුනි (8 ශ්‍රේණිය)</strong></div>
+        <div class="card" style="font-style: italic;"><p>"දරුවාගේ ලකුණු ගොඩක් වැඩි වුණා. නිබන්ධනත් ගොඩක් ලස්සනයි."</p><strong>- දෙමාපිය අදහසක්</strong></div>
       </div>
-
-      <div class="online-card">
-        <span>🎬</span>
-        <div><strong>Recordings ලබාදීම:</strong> මගහැරුණු පංති හෝ නැවත නැරඹීමට අවශ්‍ය පාඩම් සඳහා Recordings ලබාදේ.</div>
-      </div>
-
-      <a href="https://wa.me/94713605534" target="_blank" class="btn btn-zoom">🚀 Online පංතියට ලියාපදිංචි වන්න (WhatsApp)</a>
     </div>
 
     <div class="section" id="resources">
-      <h2>අධ්‍යාපන සම්පත් (PDF නිබන්ධන)</h2>
-      <p>ඔබේ ශ්‍රේණියට අදාළ නිබන්ධන පහතින් භාගත (Download) කරගන්න.</p>
-      
+      <h2>PDF නිබන්ධන</h2>
       <div class="download-grid">
-        <div class="download-card">
-          <h3>6 ශ්‍රේණිය</h3>
-          <a href="#" class="btn btn-pdf">📥 Download PDF</a>
-        </div>
-        <div class="download-card">
-          <h3>7 ශ්‍රේණිය</h3>
-          <a href="#" class="btn btn-pdf">📥 Download PDF</a>
-        </div>
-        <div class="download-card">
-          <h3>8 ශ්‍රේණිය</h3>
-          <a href="#" class="btn btn-pdf">📥 Download PDF</a>
-        </div>
-        <div class="download-card">
-          <h3>9 ශ්‍රේණිය</h3>
-          <a href="#" class="btn btn-pdf">📥 Download PDF</a>
-        </div>
-        </div>
+        <div class="download-card"><h3>6 ශ්‍රේණිය</h3><a href="grade6.html" class="btn" style="font-size: 0.8rem;">📄 සම්පත් ගවේෂණය</a></div>
+        <div class="download-card"><h3>7 ශ්‍රේණිය</h3><a href="grade7.html" class="btn" style="font-size: 0.8rem;">📄 සම්පත් ගවේෂණය</a></div>
+        <div class="download-card"><h3>8 ශ්‍රේණිය</h3><a href="grade8.html" class="btn" style="font-size: 0.8rem;">📄 සම්පත් ගවේෂණය</a></div>
+        <div class="download-card"><h3>9 ශ්‍රේණිය</h3><a href="grade9.html" class="btn" style="font-size: 0.8rem;">📄 සම්පත් ගවේෂණය</a></div>
+      </div>
     </div>
 
     <div class="section" id="register">
       <h2 style="text-align: center;">නව සිසුන් ලියාපදිංචිය</h2>
       <div class="reg-form-container">
         <form id="registrationForm">
-          <label>සම්පූර්ණ නම:</label>
-          <input type="text" name="name" placeholder="ඔබේ නම මෙහි ඇතුළත් කරන්න" required>
-          <label>ශ්‍රේණිය:</label>
-          <input type="text" name="grade" placeholder="උදා: 7 ශ්‍රේණිය" required>
-          <label>දුරකථන අංකය:</label>
-          <input type="tel" name="phone" placeholder="071XXXXXXX" required>
+          <label>සම්පූර්ණ නම:</label><input type="text" name="name" required placeholder="ඔබේ නම">
+          <label>ශ්‍රේණිය:</label><input type="text" name="grade" required placeholder="උදා: 7 ශ්‍රේණිය">
+          <label>දුරකථන අංකය:</label><input type="tel" name="phone" required placeholder="071XXXXXXX">
           <button class="btn" type="submit" id="submitBtn">දත්ත ඇතුළත් කර ලියාපදිංචි වන්න</button>
         </form>
         <div id="successBox" style="display:none; text-align:center; padding:20px; background:#e7fbd3; border-radius:10px;">
           <h3 style="color:#28a745;">✅ ලියාපදිංචිය සාර්ථකයි!</h3>
-          <p>අපි ඔබව ඉක්මනින් සම්බන්ධ කරගන්නෙමු.</p>
+          <p>පහත බොත්තම එබීමෙන් අපගේ පංති සමූහයට එකතු වන්න.</p>
+          <a href="https://chat.whatsapp.com/YOUR_GROUP_LINK" class="btn" style="background:#25d366;">📲 WhatsApp සමූහයට බැඳෙන්න</a>
         </div>
       </div>
     </div>
@@ -271,11 +203,23 @@
 
   </div>
 
-  <footer>
-    <p>© 2026 සිංහල භාෂා පංතිය | Desham Wijethunga</p>
-  </footer>
+  <a href="https://wa.me/94713605534" class="float-wa" target="_blank">WA</a>
+
+  <footer><p>© 2026 සිංහල භාෂා පංතිය | Desham Wijethunga</p></footer>
 
   <script>
+    // Countdown Logic
+    const examDate = new Date("March 25, 2026 08:00:00").getTime();
+    setInterval(function() {
+      const diff = examDate - new Date().getTime();
+      if (diff > 0) {
+        document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      }
+    }, 1000);
+
+    // Registration Form Logic
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzaIbBVrl-H-GlTOIHoMG1W2aadZQUiwphQDP7Avp4C1VLS88Os8pf-FiX-paKr2J7O/exec';
     const form = document.getElementById('registrationForm');
     const successBox = document.getElementById('successBox');
