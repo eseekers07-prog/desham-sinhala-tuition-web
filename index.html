@@ -19,7 +19,11 @@
     nav a:hover { background-color: rgba(255,255,255,0.1); color: #d69dfc; transform: scale(1.05); }
 
     .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-    .section { background: #fff; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    
+    /* Fade-in Animation */
+    .section { background: #fff; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); opacity: 0; transform: translateY(20px); transition: 0.6s all ease-out; }
+    .section.appear { opacity: 1; transform: translateY(0); }
+
     .section h2 { margin-top: 0; color: #5a189a; border-left: 5px solid #7b2cbf; padding-left: 15px; margin-bottom: 20px; }
     
     .countdown-container { background: linear-gradient(135deg, #7b2cbf, #3c096c); color: white; text-align: center; padding: 25px; border-radius: 15px; margin-bottom: 30px; }
@@ -54,8 +58,13 @@
     .reg-form-container { max-width: 600px; margin: 0 auto; padding: 25px; background: #fdfaff; border-radius: 15px; border: 1px solid #e0d0f0; }
     form input { width: 100%; padding: 14px; margin-bottom: 20px; border: 2px solid #ddd; border-radius: 10px; box-sizing: border-box; }
 
-    .float-wa { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; font-size: 30px; transition: 0.3s; }
+    /* Floating Buttons Container */
+    .floating-btns { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+    .float-wa { width: 60px; height: 60px; background-color: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); text-decoration: none; font-size: 30px; transition: 0.3s; }
     .float-wa:hover { transform: scale(1.1); background-color: #128c7e; }
+    
+    #scrollTopBtn { width: 50px; height: 50px; background-color: #3c096c; color: white; border-radius: 50%; display: none; align-items: center; justify-content: center; border: none; cursor: pointer; font-size: 20px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); transition: 0.3s; margin-left: 5px; }
+    #scrollTopBtn:hover { background-color: #5a189a; transform: translateY(-5px); }
     
     .syllabus-list { list-style: none; padding: 0; text-align: left; }
     .syllabus-list li { margin-bottom: 8px; padding-left: 25px; position: relative; }
@@ -64,7 +73,7 @@
     .faq-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
     .faq-item strong { color: #5a189a; display: block; margin-bottom: 5px; }
 
-    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; margin-bottom: 20px; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
     .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
     footer { background-color: #240046; color: #eee; text-align: center; padding: 30px; margin-top: 50px; }
@@ -98,7 +107,7 @@
       </div>
     </div>
 
-    <div class="section notice-board">
+    <div class="section notice-board appear">
       <h2 style="color: #e65100; border-left-color: #ff9100;">📢 පංති නිවේදන</h2>
       <div class="notice-item">⭐ 2026 නව වසර සඳහා සිසුන් බඳවා ගැනීම දැන් සිදු කෙරේ.</div>
       <div class="notice-item">⭐ එළඹෙන සෙනසුරාදා සියලුම පංති නියමිත පරිදි Zoom ඔස්සේ පැවැත්වේ.</div>
@@ -257,13 +266,19 @@
 
   </div>
 
-  <a href="https://wa.me/94713605534" class="float-wa" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <div class="floating-btns">
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <a href="https://wa.me/94713605534" class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
 
   <footer><p>© 2026 සිංහල භාෂා පංතිය | Desham Wijethunga</p></footer>
 
   <script>
+    // Countdown Timer
     const examDate = new Date("March 25, 2026 08:00:00").getTime();
     setInterval(function() {
       const diff = examDate - new Date().getTime();
@@ -274,6 +289,27 @@
       }
     }, 1000);
 
+    // Scroll Animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach((section) => observer.observe(section));
+
+    // Scroll to Top Button Visibility
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            document.getElementById("scrollTopBtn").style.display = "flex";
+        } else {
+            document.getElementById("scrollTopBtn").style.display = "none";
+        }
+    };
+
+    // Registration Form
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzaIbBVrl-H-GlTOIHoMG1W2aadZQUiwphQDP7Avp4C1VLS88Os8pf-FiX-paKr2J7O/exec';
     const form = document.getElementById('registrationForm');
     const successBox = document.getElementById('successBox');
