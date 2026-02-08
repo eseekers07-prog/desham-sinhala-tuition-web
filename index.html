@@ -14,8 +14,10 @@
   <style>
     body { margin: 0; font-family: 'Noto Sans Sinhala', Arial, sans-serif; background-color: #f5f7fb; color: #222; line-height: 1.6; scroll-behavior: smooth; }
     header { background: url('Untitled-1.png'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #3c096c; height: 600px; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-    nav { background-color: #3c096c; display: flex; justify-content: center; gap: 15px; padding: 15px; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; transition: 0.3s; padding: 5px 10px; border-radius: 5px; }
+    
+    /* Navigation Mobile Fix */
+    nav { background-color: #3c096c; display: flex; justify-content: center; gap: 10px; padding: 15px; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; transition: 0.3s; padding: 5px 10px; border-radius: 5px; font-size: 14px; }
     nav a:hover { background-color: rgba(255,255,255,0.1); color: #d69dfc; transform: scale(1.05); }
 
     .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
@@ -23,12 +25,12 @@
     /* Fade-in Animation */
     .section { background: #fff; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); opacity: 0; transform: translateY(20px); transition: 0.6s all ease-out; }
     .section.appear { opacity: 1; transform: translateY(0); }
-
     .section h2 { margin-top: 0; color: #5a189a; border-left: 5px solid #7b2cbf; padding-left: 15px; margin-bottom: 20px; }
     
+    /* Timer Mobile Fix */
     .countdown-container { background: linear-gradient(135deg, #7b2cbf, #3c096c); color: white; text-align: center; padding: 25px; border-radius: 15px; margin-bottom: 30px; }
-    .timer { display: flex; justify-content: center; gap: 20px; font-size: 1.5rem; font-weight: bold; margin-top: 10px; }
-    .timer div { background: rgba(255,255,255,0.2); padding: 10px; border-radius: 10px; min-width: 80px; }
+    .timer { display: flex; justify-content: center; gap: 10px; font-size: 1.2rem; font-weight: bold; margin-top: 10px; }
+    .timer div { background: rgba(255,255,255,0.2); padding: 10px; border-radius: 10px; min-width: 65px; }
 
     .notice-board { border: 2px dashed #ff9100; background: #fff9f0; padding: 20px; border-radius: 15px; margin-bottom: 30px; }
     .notice-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: bold; color: #e65100; }
@@ -39,8 +41,9 @@
     .online-card { background-color: #f3e5f5; border-radius: 10px; padding: 15px 20px; margin-bottom: 15px; display: flex; align-items: center; gap: 20px; }
     .online-card span { font-size: 2.2rem; }
 
+    /* Table Mobile Fix */
     .timetable-container { overflow-x: auto; margin-bottom: 20px; }
-    table { width: 100%; border-collapse: collapse; background: white; }
+    table { width: 100%; border-collapse: collapse; background: white; min-width: 500px; }
     th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
     th { background-color: #7b2cbf; color: white; }
 
@@ -58,13 +61,10 @@
     .reg-form-container { max-width: 600px; margin: 0 auto; padding: 25px; background: #fdfaff; border-radius: 15px; border: 1px solid #e0d0f0; }
     form input { width: 100%; padding: 14px; margin-bottom: 20px; border: 2px solid #ddd; border-radius: 10px; box-sizing: border-box; }
 
-    /* Floating Buttons Container */
     .floating-btns { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
     .float-wa { width: 60px; height: 60px; background-color: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); text-decoration: none; font-size: 30px; transition: 0.3s; }
-    .float-wa:hover { transform: scale(1.1); background-color: #128c7e; }
     
     #scrollTopBtn { width: 50px; height: 50px; background-color: #3c096c; color: white; border-radius: 50%; display: none; align-items: center; justify-content: center; border: none; cursor: pointer; font-size: 20px; box-shadow: 2px 5px 15px rgba(0,0,0,0.3); transition: 0.3s; margin-left: 5px; }
-    #scrollTopBtn:hover { background-color: #5a189a; transform: translateY(-5px); }
     
     .syllabus-list { list-style: none; padding: 0; text-align: left; }
     .syllabus-list li { margin-bottom: 8px; padding-left: 25px; position: relative; }
@@ -78,7 +78,14 @@
 
     footer { background-color: #240046; color: #eee; text-align: center; padding: 30px; margin-top: 50px; }
 
-    @media (max-width: 768px) { header { height: 250px; } .teacher-box { justify-content: center; text-align: center; } }
+    /* Mobile Header & Box Overrides */
+    @media (max-width: 768px) { 
+      header { height: 250px; } 
+      .teacher-box { justify-content: center; text-align: center; } 
+      .timer { gap: 5px; font-size: 1rem; }
+      .timer div { min-width: 55px; padding: 5px; }
+      nav a { font-size: 12px; padding: 4px 6px; }
+    }
   </style>
 </head>
 <body>
@@ -121,7 +128,7 @@
           <p>👩‍🏫 <strong>නම:</strong> Desham Wijethunga</p>
           <p>🎓 <strong>සුදුසුකම්:</strong> BA / Diploma in Sinhala</p>
           <p>🏫 <strong>අත්දැකීම:</strong> වසර 5+ සිංහල ඉගැන්වීමේ පළපුරුද්ද</p>
-          <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <div style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
             <a href="https://web.facebook.com/profile.php?id=100094911323120" target="_blank" class="btn" style="background:#1877F2; width:auto; font-size:0.8rem; padding: 8px 15px;"><i class="fab fa-facebook"></i> Facebook Page</a>
             <a href="https://www.youtube.com/channel/UCREaOQ256UIg06RUCqSsbyQ" target="_blank" class="btn" style="background:#FF0000; width:auto; font-size:0.8rem; padding: 8px 15px;"><i class="fab fa-youtube"></i> YouTube Channel</a>
           </div>
@@ -267,18 +274,13 @@
   </div>
 
   <div class="floating-btns">
-    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    <a href="https://wa.me/94713605534" class="float-wa" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><i class="fas fa-arrow-up"></i></button>
+    <a href="https://wa.me/94713605534" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>
 
   <footer><p>© 2026 සිංහල භාෂා පංතිය | Desham Wijethunga</p></footer>
 
   <script>
-    // Countdown Timer
     const examDate = new Date("March 25, 2026 08:00:00").getTime();
     setInterval(function() {
       const diff = examDate - new Date().getTime();
@@ -289,46 +291,27 @@
       }
     }, 1000);
 
-    // Scroll Animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('appear');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('appear');
         });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.section').forEach((section) => observer.observe(section));
 
-    // Scroll to Top Button Visibility
     window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            document.getElementById("scrollTopBtn").style.display = "flex";
-        } else {
-            document.getElementById("scrollTopBtn").style.display = "none";
-        }
+        document.getElementById("scrollTopBtn").style.display = (window.scrollY > 300) ? "flex" : "none";
     };
 
-    // Registration Form
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzaIbBVrl-H-GlTOIHoMG1W2aadZQUiwphQDP7Avp4C1VLS88Os8pf-FiX-paKr2J7O/exec';
     const form = document.getElementById('registrationForm');
-    const successBox = document.getElementById('successBox');
-    const submitBtn = document.getElementById('submitBtn');
-
     form.addEventListener('submit', e => {
       e.preventDefault();
+      const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
       submitBtn.innerHTML = "යවමින්...";
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(() => {
-            form.style.display = "none";
-            successBox.style.display = "block";
-        })
-        .catch(() => {
-            alert("Error!");
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = "දත්ත ඇතුළත් කර ලියාපදිංචි වන්න";
-        });
+        .then(() => { form.style.display = "none"; document.getElementById('successBox').style.display = "block"; })
+        .catch(() => { alert("Error!"); submitBtn.disabled = false; });
     });
   </script>
 </body>
